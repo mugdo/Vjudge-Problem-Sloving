@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+using namespace std;
+long long  absulate(long long  a,long long  b)
+{
+   if(a>b)
+      return a-b;
+   else
+      return b-a;
+}
+long long mixmum(long long res1,long long res2)
+{
+   if(res1>res2)
+      return res1;
+   else
+      return res2;
+}
+int main()
+{
+   int t;
+   cin>>t;
+   for(int T=0;T<t;T++)
+   {
+      long long n,m,c,r;
+      cin>>n>>m>>c>>r;
+      long long res1=0,res2=0,res3=0,res4=0,res=0;
+      res1=absulate(1,c)+absulate(1,r);
+      res2=absulate(n,c)+absulate(1,r);
+      res3=absulate(n,c)+absulate(m,r);
+      res4=absulate(1,c)+absulate(m,r);
+      //cout<<res1<<endl;
+      res=mixmum(mixmum(res1,res2),mixmum(res3,res4));
+      cout<<res<<endl;
+
+   }
+   return 0;
+}
